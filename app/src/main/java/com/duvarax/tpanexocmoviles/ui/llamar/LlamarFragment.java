@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.duvarax.tpanexocmoviles.MainActivity;
 import com.duvarax.tpanexocmoviles.R;
@@ -45,20 +46,14 @@ public class LlamarFragment extends Fragment {
         mViewModel.getLlamar().observe(getActivity(), new Observer<String>() {
             @Override
             public void onChanged(String numero) {
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:" + numero));
-                if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.CALL_PHONE}, 1);
-                    return;
-                }
-                startActivity(intent);
+                Toast.makeText(getActivity(), "Llamando a " + numero, Toast.LENGTH_SHORT).show();
             }
         });
 
         binding.btnLlamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mViewModel.iniciarLlamada(binding.etNumero.getText()+"");
+                mViewModel.intentarLlamada(binding.etNumero.getText()+"");
             }
         });
         return root;

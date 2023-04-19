@@ -15,5 +15,15 @@
         android:name="com.duvarax.tpanexocmoviles.ui.llamar.LlamarFragment"
         android:label="fragment_llamar"
         tools:layout="@layout/fragment_llamar" />
+    <fragment
+        android:id="@+id/nav_mercado"
+        android:name="com.duvarax.tpanexocmoviles.ui.mercados.MercadoFragment"
+        android:label="fragment_mercado"
+        tools:layout="@layout/fragment_mercado" />
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.duvarax.tpanexocmoviles.ui.salir.SalirFragment"
+        android:label="fragment_salir"
+        tools:layout="@layout/fragment_salir" />
 
 </navigation>

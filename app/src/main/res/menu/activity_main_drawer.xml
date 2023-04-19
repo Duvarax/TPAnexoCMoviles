@@ -10,7 +10,15 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_llamar"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_llamada"
             android:title="Llamar" />
+        <item
+            android:id="@+id/nav_mercado"
+            android:icon="@drawable/ic_mercado"
+            android:title="Mercados" />
+        <item
+            android:id="@+id/nav_salir"
+            android:icon="@drawable/ic_salir"
+            android:title="Salir" />
     </group>
 </menu>
